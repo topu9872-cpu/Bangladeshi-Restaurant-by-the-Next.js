@@ -15,16 +15,16 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`navbar bg-base-100 shadow-md px-4 md:px-8 sticky top-0 mx-auto w-full lg:w-11/12 z-100 
+      className={`navbar bg-base-100 shadow-md px-4 md:px-8 sticky top-0 mx-auto w-full lg:w-11/12 z-100 flex justify-center
       transition-all duration-1000 ease-out transform
       ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="navbar-start">
         <Link
           href="/"
-          className="btn btn-ghost text-2xl font-bold font-serif italic text-orange-600"
+          className="btn btn-ghost text-2xl font-bold font-serif italic text-[#fa3d3b]"
         >
-          Bangli Foods
+          🍛 Bangli Foods
         </Link>
       </div>
 
@@ -33,7 +33,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/"
-              className={`text-lg font-bold ${pathName === "/" && "text-orange-600"}`}
+              className={`text-lg font-bold ${pathName === "/" && "text-[#fa3d3b]"}`}
             >
               Home
             </Link>
@@ -41,7 +41,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/cart"
-              className={`text-lg font-bold ${pathName === "/cart" && "text-orange-600"}`}
+              className={`text-lg font-bold ${pathName === "/cart" && "text-[#fa3d3b]"}`}
             >
               Cart
             </Link>
@@ -49,7 +49,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/dashboard"
-              className={`text-lg font-bold ${pathName === "/dashboard" && "text-orange-600"}`}
+              className={`text-lg font-bold ${pathName === "/dashboard" && "text-[#fa3d3b]"}`}
             >
               Dashboard
             </Link>
@@ -58,7 +58,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end gap-2 md:gap-4">
-        {/* Search */}
+       
         <div className="flex items-center">
           {isSearchActive ? (
             <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-2 border border-gray-200 animate-in fade-in zoom-in duration-200">
@@ -69,7 +69,7 @@ const NavBar = () => {
                 autoFocus
               />
               <IoClose
-                className="cursor-pointer text-xl text-gray-500 hover:text-red-500"
+                className="cursor-pointer text-xl text-gray-500 hover:text-[#fa3d3b]"
                 onClick={() => setIsSearchActive(false)}
               />
             </div>
@@ -83,7 +83,7 @@ const NavBar = () => {
           )}
         </div>
 
-        {/* Cart Dropdown */}
+        
         <div className="dropdown dropdown-end hidden sm:flex">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -101,7 +101,7 @@ const NavBar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item bg-orange-600 text-white border-none">
+              <span className="badge badge-sm indicator-item bg-[#fa3d3b] text-white">
                 8
               </span>
             </div>
@@ -112,13 +112,13 @@ const NavBar = () => {
           >
             <div className="card-body">
               <span className="font-bold text-lg text-black">8 Items</span>
-              <span className="text-orange-600 font-semibold">
+              <span className="text-[#fa3d3b] font-semibold">
                 Subtotal: $124
               </span>
               <div className="card-actions">
                 {/* Fixed: Moved className to Link or keep it on Button inside Link */}
                 <Link href="/cart" className="w-full">
-                  <button className="btn btn-sm btn-block bg-orange-600 text-white border-none hover:bg-orange-700">
+                  <button className="btn btn-sm btn-block bg-[#fa3d3b] text-white border-none hover:bg-[#fa3d3b]">
                     View Cart
                   </button>
                 </Link>
@@ -127,7 +127,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <button className="btn btn-sm btn-outline border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all font-semibold rounded-lg">
+        <button className="btn btn-sm btn-outline border-[#fa3d3b] text-[#fa3d3b] hover:bg-[#fa3d3b] hover:text-white transition-all font-semibold rounded-lg">
           Logout
         </button>
       </div>

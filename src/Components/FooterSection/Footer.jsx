@@ -6,7 +6,7 @@ import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="mt-20">
+    <footer className="mt-20 w-screen md:w-11/12 lg:w-11/12 mx-auto">
       <div className="overflow-hidden leading-none">
         <svg
           viewBox="0 0 1440 150"
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
+         
           <div>
             <h3 className="text-lg font-semibold mb-4">Utility Links</h3>
             <ul className="space-y-2 text-sm opacity-80">
@@ -55,7 +55,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <p className="text-sm opacity-80 leading-6">
