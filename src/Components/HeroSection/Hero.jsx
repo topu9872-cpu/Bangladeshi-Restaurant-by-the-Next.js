@@ -5,7 +5,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Hero = () => {
   return (
-    <div className="mx-auto w-11/12 mt-4">
+    <div className="mx-auto mt-4">
       <div className="relative w-full h-100 md:h-160 lg:h-300 rounded-3xl overflow-hidden shadow-xl">
         <Image
           src="/image.png"

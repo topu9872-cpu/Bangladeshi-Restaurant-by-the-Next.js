@@ -1,12 +1,12 @@
 import { Geist, Geist_Mono, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/Components/navbar/NavBar";
+import Providers from "../Components/themeProveder/Providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,14 +25,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"
-    data-theme="light">
+    <html lang="en"   suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} min-h-full flex flex-col`}
       >
-        <NavBar />
+       
+         <Providers  >
+          
+          <main className="max-w-11/12 mx-auto">
+          <NavBar />
 
-        <main>{children}</main>
+          {children}
+          </main>
+        </Providers>
+      
       </body>
     </html>
   );

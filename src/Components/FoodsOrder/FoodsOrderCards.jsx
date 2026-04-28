@@ -8,20 +8,21 @@ const FoodsOrderCards = async () => {
   const datas = await getScrollCardsData();
 
   return (
-    <div>
-      <div className="mx-94">
+    <div >
+      <div className=" flex justify-center hover:scale-110 transition  mx-84">
         <Link href={"/allCards"}>
-          <button className="text-center text-xs text-gray-500 flex items-center p-2 rounded-full shadow-md shadow-olive-400">
+          <button className=" text-sm  shadow-md rounded-full p-2 flex items-center shadow-olive-200">
             All Foods <CiLocationArrow1 />
           </button>
         </Link>
-        <h1 className="text-3xl text-center flex justify-center font-black py-6 font-serif text-nowrap">
+       
+      </div>
+       <h1 className="text-3xl text-center flex justify-center font-black py-6 font-serif text-nowrap">
           Khaas Vyanian
         </h1>
-      </div>
       <div className="mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center w-11/12 ">
         {datas.slice(0, 3).map((data) => (
-          <div key={data.id} className="hover-3d my-0">
+          <div key={data.id} className="hover:scale-105 transition my-0">
             <Cards data={data} />
           </div>
         ))}

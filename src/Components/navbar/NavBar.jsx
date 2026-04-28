@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { IoSearch, IoClose } from "react-icons/io5";
+import ThemeToggle from "../themeProveder/ThemeToggle";
 
 const NavBar = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -22,18 +23,19 @@ const NavBar = () => {
       <div className="navbar-start">
         <Link
           href="/"
-          className="btn btn-ghost text-2xl font-bold font-serif italic text-[#fa3d3b]"
+          className="btn btn-ghost text-2xl font-bold hidden md:flex lg:flex font-serif italic text-[#fa3d3b]"
         >
           🍛 Bangli Foods
         </Link>
+        
       </div>
 
       <div className="navbar-center">
-        <ul className="menu menu-horizontal px-1 font-semibold text-gray-700 gap-2">
+        <ul className="menu menu-horizontal px-1 font-semibold gap-2">
           <li>
             <Link
               href="/"
-              className={`text-sm font-bold ${pathName === "/" && "text-[#fa3d3b]"}`}
+              className={`text-sm font-bold  ${pathName === "/" && "text-[#fa3d3b]"}`}
             >
               Home
             </Link>
@@ -41,7 +43,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/cart"
-              className={`text-sm font-bold ${pathName === "/cart" && "text-[#fa3d3b]"}`}
+              className={`text-sm font-bold  ${pathName === "/cart" && "text-[#fa3d3b]"}`}
             >
               Cart
             </Link>
@@ -116,7 +118,7 @@ const NavBar = () => {
                 Subtotal: $124
               </span>
               <div className="card-actions">
-                {/* Fixed: Moved className to Link or keep it on Button inside Link */}
+
                 <Link href="/cart" className="w-full">
                   <button className="btn btn-sm btn-block bg-[#fa3d3b] text-white border-none hover:bg-[#fa3d3b]">
                     View Cart
@@ -130,6 +132,7 @@ const NavBar = () => {
         <button className="btn btn-sm btn-outline border-[#fa3d3b] text-[#fa3d3b] hover:bg-[#fa3d3b] hover:text-white transition-all font-semibold rounded-lg">
           Logout
         </button>
+        <ThemeToggle/>
       </div>
     </nav>
   );

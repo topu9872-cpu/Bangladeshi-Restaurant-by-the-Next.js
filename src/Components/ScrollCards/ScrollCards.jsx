@@ -7,11 +7,11 @@ import { getScrollCardsData } from "../JsonData/data";
 const ScrollCards = async () => {
   const cards = await getScrollCardsData();
   return (
-    <div className=" w-screen md:w-11/12 lg:w-11/12 mx-auto overflow-hidden flex justify-center  mt-6 ">
+    <div className="   mx-auto  flex justify-center  mt-10 ">
       <Marquee speed={30} pauseOnHover={true}>
-        <div className="flex gap-5 animate-scroll justify-center mx-auto">
+        <div className="flex gap-5 justify-center h-70 mx-auto">
           {cards.map((card) => (
-            <div key={card.id} className="w-50 text-center  h-60 flex-col ">
+            <div key={card.id} className="w-40 h-46 text-center flex-col ">
               <Image
                 className="size-20 rounded-full object-cover mx-auto"
                 src={card.image}
