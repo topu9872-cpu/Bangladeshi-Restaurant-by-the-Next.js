@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`navbar bg-base-100 shadow-md px-4 md:px-8 sticky top-0 mx-auto w-full lg:w-11/12 z-100 flex justify-center
+      className={`bg-base-100 shadow-md px-4 md:px-8 sticky my-2 top-0 mx-auto w-full lg:w-11/12 z-100 flex justify-center
       transition-all duration-1000 ease-out transform
       ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
@@ -33,7 +33,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/"
-              className={`text-lg font-bold ${pathName === "/" && "text-[#fa3d3b]"}`}
+              className={`text-sm font-bold ${pathName === "/" && "text-[#fa3d3b]"}`}
             >
               Home
             </Link>
@@ -41,7 +41,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/cart"
-              className={`text-lg font-bold ${pathName === "/cart" && "text-[#fa3d3b]"}`}
+              className={`text-sm font-bold ${pathName === "/cart" && "text-[#fa3d3b]"}`}
             >
               Cart
             </Link>
@@ -49,7 +49,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/dashboard"
-              className={`text-lg font-bold ${pathName === "/dashboard" && "text-[#fa3d3b]"}`}
+              className={`text-sm font-bold ${pathName === "/dashboard" && "text-[#fa3d3b]"}`}
             >
               Dashboard
             </Link>

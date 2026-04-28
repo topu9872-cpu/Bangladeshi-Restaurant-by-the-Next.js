@@ -1,27 +1,15 @@
-import Image from "next/image";
-import { IoMdTime } from "react-icons/io";
-import Ratting from "../ratting/Ratting";
-import { getScrollCardsData } from "../JsonData/data";
-import { CiLocationArrow1 } from "react-icons/ci";
-import Link from "next/link";
+import { getScrollCardsData } from '@/Components/JsonData/data';
+import Ratting from '@/Components/ratting/Ratting';
+import Image from 'next/image';
+import React from 'react';
+import { IoMdTime } from 'react-icons/io';
 
-const FoodsOrderCards = async () => {
-  const datas = await getScrollCardsData();
-
+const AllCards =async () => {
+    const datas=await getScrollCardsData()
   return (
     <div>
-      <div className="mx-94">
-        <Link href={'/allCards'}>
-        <button className="text-center text-xs text-gray-500 flex items-center p-2 rounded-full shadow-md shadow-olive-400">
-          All Foods <CiLocationArrow1 />
-        </button>
-        </Link>
-        <h1 className="text-3xl text-center flex justify-center font-black py-6 font-serif text-nowrap">
-          Khaas Vyanian
-        </h1>
-      </div>
       <div className="mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center w-11/12 ">
-        {datas.slice(0, 3).map((data) => (
+        {datas.map((data) => (
           <div key={data.id} className="hover-3d my-0">
             <div className="rounded-xl shadow-lg  w-60 h-fit bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[#00ffff] transition-shadow">
               <figure className="relative h-40 w-full">
@@ -70,4 +58,4 @@ const FoodsOrderCards = async () => {
   );
 };
 
-export default FoodsOrderCards;
+export default AllCards;

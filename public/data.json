@@ -165,7 +165,7 @@
     "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500",
     "platesLeft": 18
   },
-    {
+  {
     "id": 16,
     "name": "Butter Naan & Curry",
     "category": "Indian Combo",
@@ -330,7 +330,7 @@
     "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800",
     "platesLeft": 15
   },
-    {
+  {
     "id": 31,
     "name": "Berry Bliss Bowls",
     "category": "Healthy",
@@ -494,8 +494,8 @@
     "desc": "Soft vanilla ice cream in crispy cone.",
     "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=500",
     "platesLeft": 25
-  }
-,  {
+  },
+  {
     "id": 46,
     "name": "Beef Burger Deluxe",
     "category": "Fast Food",
@@ -659,8 +659,8 @@
     "desc": "Layered sandwich with chicken and veggies.",
     "image": "https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=500",
     "platesLeft": 19
-  }
-,  {
+  },
+  {
     "id": 61,
     "name": "Spicy Beef Steak",
     "category": "Grill",
@@ -824,8 +824,8 @@
     "desc": "Hot fried rice with vegetables and spice mix.",
     "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=500",
     "platesLeft": 17
-  }
-,  {
+  },
+  {
     "id": 76,
     "name": "Grilled Chicken Salad Bowl",
     "category": "Healthy",
@@ -979,7 +979,7 @@
     "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=500",
     "platesLeft": 13
   },
- {
+  {
     "id": 90,
     "name": "The Lamb Lab",
     "category": "Fusion",
@@ -1100,7 +1100,7 @@
     "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=800",
     "platesLeft": 50
   },
-  
+
   {
     "id": 101,
     "name": "Istanbul Night",
@@ -1112,7 +1112,7 @@
     "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800",
     "platesLeft": 14
   },
-{
+  {
     "id": 102,
     "name": "Sapporo Zen",
     "category": "Japanese",
@@ -1233,7 +1233,7 @@
     "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=800",
     "platesLeft": 6
   },
- {
+  {
     "id": 113,
     "name": "Rustic Roots",
     "category": "Healthy",
@@ -1300,7 +1300,7 @@
     "platesLeft": 50
   },
   {
-    "id":119,
+    "id": 119,
     "name": "Waffle Works",
     "category": "Breakfast",
     "price": "$12.50",
@@ -1321,6 +1321,4 @@
     "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800",
     "platesLeft": 22
   }
-
-
 ]

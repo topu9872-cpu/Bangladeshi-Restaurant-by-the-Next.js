@@ -20,7 +20,7 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="bg-[#3b1208] text-white px-6 md:px-16 py-12">
+      <div className="bg-[#3b1208] text-white px-6 md:px-16 py-8 my-0">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 font-serif italic">
