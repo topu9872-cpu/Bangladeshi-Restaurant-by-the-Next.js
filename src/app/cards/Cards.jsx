@@ -4,9 +4,13 @@ import { IoMdTime } from "react-icons/io";
 
 import Link from "next/link";
 import Ratting from "@/Components/ratting/Ratting";
+import ContextButton from "@/Components/ContextProvider/ContextButton";
 
 
 const Cards = ({data}) => {
+
+  
+
   return (
     <div>
       <div className="rounded-xl shadow-2xl  w-full h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[#00ffff] transition-shadow">
@@ -43,9 +47,7 @@ const Cards = ({data}) => {
                </div>
                 <div className="flex justify-between mt-4 gap-2">
                   
-                  <button  className="px-3 py-2 cursor-pointer  text-xs font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-md hover:bg-white hover:text-[#fa3d3b] transition-colors">
-                    Add to Cart
-                  </button>
+                 <ContextButton data={data}/>
             
                   <button className="px-3 py-2 text-xs cursor-pointer  font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-md hover:bg-white hover:text-[#fa3d3b] transition-colors">
                     Buy Now

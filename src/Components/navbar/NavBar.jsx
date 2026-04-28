@@ -16,7 +16,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`bg-base-100 shadow-md px-4 md:px-8 sticky my-2 top-0 mx-auto w-full lg:w-11/12 z-100 flex justify-center
+      className={`bg-base-200 shadow-md px-4 md:px-8  mx-auto z-100 flex rounded-b-xs justify-center
       transition-all duration-1000 ease-out transform
       ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
@@ -27,7 +27,6 @@ const NavBar = () => {
         >
           🍛 Bangli Foods
         </Link>
-        
       </div>
 
       <div className="navbar-center">
@@ -60,7 +59,6 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end gap-2 md:gap-4">
-       
         <div className="flex items-center">
           {isSearchActive ? (
             <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-2 border border-gray-200 animate-in fade-in zoom-in duration-200">
@@ -85,7 +83,6 @@ const NavBar = () => {
           )}
         </div>
 
-        
         <div className="dropdown dropdown-end hidden sm:flex">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -118,7 +115,6 @@ const NavBar = () => {
                 Subtotal: $124
               </span>
               <div className="card-actions">
-
                 <Link href="/cart" className="w-full">
                   <button className="btn btn-sm btn-block bg-[#fa3d3b] text-white border-none hover:bg-[#fa3d3b]">
                     View Cart
@@ -132,7 +128,7 @@ const NavBar = () => {
         <button className="btn btn-sm btn-outline border-[#fa3d3b] text-[#fa3d3b] hover:bg-[#fa3d3b] hover:text-white transition-all font-semibold rounded-lg">
           Logout
         </button>
-        <ThemeToggle/>
+        <ThemeToggle />
       </div>
     </nav>
   );

@@ -11,7 +11,7 @@ const FoodsOrderCards = async () => {
     <div >
       <div className=" flex justify-center hover:scale-110 transition  mx-84">
         <Link href={"/allCards"}>
-          <button className=" text-sm  shadow-md rounded-full p-2 flex items-center shadow-olive-200">
+          <button className=" text-xs  shadow-md rounded-full p-2 flex items-center shadow-olive-200 text-nowrap">
             All Foods <CiLocationArrow1 />
           </button>
         </Link>

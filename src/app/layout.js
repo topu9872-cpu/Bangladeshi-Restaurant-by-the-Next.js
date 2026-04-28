@@ -33,9 +33,11 @@ export default function RootLayout({ children }) {
          <Providers  >
           
           <main className="max-w-11/12 mx-auto">
+          
           <NavBar />
 
           {children}
+          
           </main>
         </Providers>
       

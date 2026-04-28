@@ -12,3 +12,4 @@ export const getScrollCardsData = async () => {
     return []; // Return an empty array or null as a fallback
   }
 };
+
