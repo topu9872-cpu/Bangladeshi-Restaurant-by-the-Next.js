@@ -52,7 +52,7 @@ const Cart = () => {
                 </span>
               ))}
             </div>
-            <div className="flex justify-end ml-100">
+            <div className="flex ml-auto items-center pr-6">
               <button
                 onClick={() => handleDalete(i)}
                 className=" items-center text-red-500 text-xl cursor-pointer"
@@ -65,7 +65,7 @@ const Cart = () => {
       ))}
       <button
         onClick={() => AllDelete()}
-        className="flex justify-center mx-auto bg-[#fa3d3b] hover:bg-white hover:text-[#fa3d3b] text-white w-full h-10 rounded-full items-center text-xl font-bold mt-10"
+        className="flex justify-center cursor-pointer mx-auto bg-[#fa3d3b] hover:bg-white hover:text-[#fa3d3b] text-white w-full h-10 rounded-full items-center text-xl font-bold mt-10"
       >
         All Delete
       </button>

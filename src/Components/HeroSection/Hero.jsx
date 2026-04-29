@@ -15,10 +15,10 @@ const Hero = () => {
           className="object-cover"
         />
 
-        <div className="absolute bottom-6 flex mx-auto justify-center left-2/5 lg:left-1/9 md:bottom-12 md:right-center">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
          <Link href={"allCards"}>
-          <button className="btn flex items-center gap-2 px-6 py-3 text-lg font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-lg hover:bg-white hover:text-[#fa3d3b] transition-all duration-300">
-            More <MdArrowOutward size={24} />
+          <button className="btn flex items-center px-2 py-1 text-sm font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-lg hover:bg-white hover:text-[#fa3d3b] transition-all duration-300">
+            more <MdArrowOutward size={16} />
           </button>
          </Link>
         </div>

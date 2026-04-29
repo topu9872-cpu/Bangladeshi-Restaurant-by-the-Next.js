@@ -30,7 +30,7 @@ const DashBoardPage = () => {
   }
 
   return (
-    <div className="w-full h-80 flex mt-10  shadow-md">
+    <div className="w-full h-80 flex mt-20  shadow-md">
       <div className="flex-1 border-none">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart margin={{ bottom: 20 }}>
