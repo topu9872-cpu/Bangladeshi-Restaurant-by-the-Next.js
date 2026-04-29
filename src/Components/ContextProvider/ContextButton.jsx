@@ -3,14 +3,15 @@
 import { useContext } from "react";
 import { Context } from "./ContextProvider";
 import { toast } from "react-toastify";
+import DashBoardPage from "@/app/dashboard/page";
 
-const ContextButton = ({data}) => {
+ const ContextButton = ({data}) => {
     const {cart,
     setCart,}=useContext(Context)
   const handelAddToCart = () => {
    setCart([...cart,data])
    toast.success(`${data.name} is add to cart`)
-   console.log(data)
+   
   };
 
   return (
@@ -21,7 +22,9 @@ const ContextButton = ({data}) => {
       >
         Add to Cart
       </button>
+      
     </div>
+    
   );
 };
 

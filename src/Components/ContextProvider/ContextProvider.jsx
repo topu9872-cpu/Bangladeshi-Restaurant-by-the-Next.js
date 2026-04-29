@@ -3,9 +3,12 @@ import React, { createContext, useState } from "react";
 export const Context = createContext();
 const ContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+   const [selectedItem, setSelectedItem] = useState(null);
   const data = {
     cart,
     setCart,
+    selectedItem,
+     setSelectedItem
   };
   return (
     <div>

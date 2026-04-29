@@ -23,7 +23,7 @@ const Cart = () => {
     <div className="mt-6 space-y-5">
       {cart.length === 0 && (
         <div className="card  mx-auto h-70 shadow-md flex items-center text-5xl text-center">
-          <h1 className="flex items-center mt-30"> No Cards</h1>
+          <h1 className="flex items-center text-center mx-auto mt-30"> No Cards</h1>
         </div>
       )}
       {cart.map((i, ind) => (
