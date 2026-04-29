@@ -15,6 +15,8 @@ const NavBar = () => {
     setIsVisible(true);
   }, []);
 const{cart}=useContext(Context)
+const totalMoney = () =>
+  cart.reduce((sum, item) => sum + Number(item.price.replace("$", "")), 0);
   return (
     <nav
  className={`bg-base-200 shadow-md px-4 md:px-8 
@@ -112,9 +114,9 @@ ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
             className="card card-compact dropdown-content bg-base-100 z-50 mt-3 w-52 shadow-xl border border-gray-100"
           >
             <div className="card-body">
-              <span className="font-bold text-lg text-black">8 Items</span>
+              <span className="font-bold text-lg text-black">{cart.length} Items</span>
               <span className="text-[#fa3d3b] font-semibold">
-                Subtotal: $124
+                Subtotal: ${totalMoney().toFixed(2)}
               </span>
               <div className="card-actions">
                 <Link href="/cart" className="w-full">

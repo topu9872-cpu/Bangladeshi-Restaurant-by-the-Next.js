@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
-
+import heroImage from '../../../public/assets/Image.png'
 const Hero = () => {
   return (
     <div className="mx-auto mt-4">
       <div className="relative w-full h-100 md:h-160 lg:h-300 rounded-3xl overflow-hidden shadow-xl">
         <Image
-          src="/image.png"
+          src={heroImage}
           alt="Hero Food Image"
           fill
           priority
