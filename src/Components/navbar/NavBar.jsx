@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoSearch, IoClose } from "react-icons/io5";
 import ThemeToggle from "../themeProveder/ThemeToggle";
+import { Context } from "../ContextProvider/ContextProvider";
 
 const NavBar = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -13,12 +14,13 @@ const NavBar = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
+const{cart}=useContext(Context)
   return (
     <nav
-      className={`bg-base-200 shadow-md px-4 md:px-8  mx-auto z-100 flex rounded-b-xs justify-center
-      transition-all duration-1000 ease-out transform
-      ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+ className={`bg-base-200 shadow-md px-4 md:px-8 
+fixed top-0 left-0 w-full z-50 flex justify-center
+transition-all duration-700 ease-out transform
+${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="navbar-start">
         <Link
@@ -101,7 +103,7 @@ const NavBar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item bg-[#fa3d3b] text-white">
-                8
+                {cart.length}
               </span>
             </div>
           </div>

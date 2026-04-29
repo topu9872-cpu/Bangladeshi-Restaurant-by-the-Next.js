@@ -1,21 +1,34 @@
 "use client";
 import { Context } from "@/Components/ContextProvider/ContextProvider";
-import { handleBuildComplete } from "next/dist/build/adapter/build-complete";
+
 import Image from "next/image";
 import React, { useContext } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const { cart, setCart } = useContext(Context);
-  const handleDalete=({id})=>{
-const deleteCard=cart.find(item=> item.id !== id)
-setCart(deleteCard)
-  }
+  const AllDelete = () => {
+    setCart([]);
+    toast.error("All items are deleted");
+  };
+  const handleDalete = (i) => {
+    const deleteCard = cart.filter((item) => item.id !== i.id);
+
+    setCart(deleteCard);
+
+    toast.error(`${i.name} item is deleted`);
+  };
   return (
     <div className="mt-6 space-y-5">
+      {cart.length === 0 && (
+        <div className="card  mx-auto h-70 shadow-md flex items-center text-5xl text-center">
+          <h1 className="flex items-center mt-30"> No Cards</h1>
+        </div>
+      )}
       {cart.map((i, ind) => (
         <div key={ind}>
-          <div className="flex border border-gray-300 shadow-md  h-26 rounded-xl">
+          <div className="flex border border-gray-300 shadow-md object-cover  h-26 rounded-xl">
             <Image
               src={i.image}
               width={150}
@@ -40,26 +53,24 @@ setCart(deleteCard)
               ))}
             </div>
             <div className="flex justify-end ml-100">
-             
-              <button onClick={()=>handleDalete(i.id)} className=" items-center text-red-500 text-xl cursor-pointer">
+              <button
+                onClick={() => handleDalete(i)}
+                className=" items-center text-red-500 text-xl cursor-pointer"
+              >
                 <RiDeleteBin6Line />
               </button>
             </div>
           </div>
         </div>
       ))}
+      <button
+        onClick={() => AllDelete()}
+        className="flex justify-center mx-auto bg-[#fa3d3b] hover:bg-white hover:text-[#fa3d3b] text-white w-full h-10 rounded-full items-center text-xl font-bold mt-10"
+      >
+        All Delete
+      </button>
     </div>
   );
 };
 
 export default Cart;
-
-// "id": 119,
-//     "name": "Waffle Works",
-//     "category": "Breakfast",
-//     "price": "$12.50",
-//     "time": "20 mins",
-//     "rating": 4.6,
-//     "desc": "Buttermilk waffles topped with crispy fried chicken and spicy maple syrup.",
-//     "image": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800",
-//     "platesLeft": 18

@@ -2,13 +2,17 @@
 
 import { useContext } from "react";
 import { Context } from "./ContextProvider";
+import { toast } from "react-toastify";
 
 const ContextButton = ({data}) => {
     const {cart,
     setCart,}=useContext(Context)
   const handelAddToCart = () => {
    setCart([...cart,data])
+   toast.success(`${data.name} is add to cart`)
+   console.log(data)
   };
+
   return (
     <div>
       <button

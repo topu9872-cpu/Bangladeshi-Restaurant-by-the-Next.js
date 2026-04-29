@@ -1,8 +1,8 @@
-import { Geist, Geist_Mono, Poppins, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/Components/navbar/NavBar";
 import Providers from "../Components/themeProveder/Providers";
-
+  import { ToastContainer} from 'react-toastify';
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
           <main className="max-w-11/12 mx-auto">
           
           <NavBar />
-
+<ToastContainer/>
           {children}
           
           </main>
