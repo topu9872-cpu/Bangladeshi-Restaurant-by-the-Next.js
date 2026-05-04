@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import { useContext } from "react";
 import { Context } from "@/Components/ContextProvider/ContextProvider";
+import BackOneByOne from "@/Components/BackOneByOne/BackOneByOne";
 
 const DashBoardPage = () => {
   const { cart, selectedItem } = useContext(Context);
@@ -21,15 +22,22 @@ const DashBoardPage = () => {
     { name: "Processed", value: selectedItem ? 1 : 0 },
   ];
 
-  if (!cart?.length && !selectedItem) {
-    return (
-      <div className="card mt-1 mx-auto h-70 shadow-md flex items-center justify-center text-3xl">
-        No Cards
-      </div>
-    );
-  }
 
+
+ 
   return (
+ <div className="mt-16">
+     <BackOneByOne/>
+      <div className="mt-6 space-y-5">
+        {cart.length === 0 && (
+          <div className="card  mx-auto h-70 shadow-md flex items-center text-5xl text-center">
+            <h1 className="flex items-center text-center mx-auto mt-30">
+              {" "}
+              No Cards
+            </h1>
+          </div>
+        )}
+  </div>
     <div className="w-full h-80 flex mt-20  shadow-md">
       <div className="flex-1 border-none">
         <ResponsiveContainer width="100%" height="100%">
@@ -55,7 +63,10 @@ const DashBoardPage = () => {
         </ResponsiveContainer>
       </div>
     </div>
+    </div>
+  
   );
+  
 };
 
 export default DashBoardPage;

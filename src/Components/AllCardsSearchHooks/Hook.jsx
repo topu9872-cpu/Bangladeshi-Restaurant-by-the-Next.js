@@ -18,7 +18,7 @@ const Hook = ({ datas }) => {
 
   return (
     <div>
-      <div className="flex justify-between container mt-20 mx-auto items-center">
+      <div className="flex justify-between container mt-4 mx-auto items-center">
         <div className="text-2xl  font-extrabold">All Items</div>
         <div>
           <div className="flex items-center">

@@ -1,13 +1,15 @@
 import Cards from "@/app/cards/Cards";
 import Hook from "@/Components/AllCardsSearchHooks/Hook";
+import BackOneByOne from "@/Components/BackOneByOne/BackOneByOne";
+
 import { getScrollCardsData } from "@/Components/JsonData/data";
 
 const AllCards = async () => {
   const datas = await getScrollCardsData();
   return (
     <div >
-   
-       
+ 
+      <div className="mt-15"><BackOneByOne/></div>
       <Hook datas={datas}/>
       
       <div className="mx-auto grid grid-cols-1 mt-7 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
