@@ -6,7 +6,10 @@ const AllCards = async () => {
   const datas = await getScrollCardsData();
   return (
     <div >
+       <div className="flex justify-between container mt-20 mx-auto items-center">
+        <h1 className="text-2xl font-extrabold">All Items</h1>
       <Hook datas={datas}/>
+      </div>
       <div className="mx-auto grid grid-cols-1 mt-7 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
         {datas.map((data) => (
           <div key={data.id} className="hover-3d my-0">

@@ -18,8 +18,13 @@ const Cards = ({ data }) => {
             alt={data.name}
             className="object-cover"
           />
-          <div className="absolute text-sm text-black top-2 right-2  rounded-full  shadow-sm">
-            <Ratting />
+          <div className="absolute  top-2 cursor-pointer flex right-2 ">
+            <Link href={`/cards/${data.id}`}>
+              <button className="text-white font-bold  px-2 items-center">
+                Details
+              </button>
+            </Link>
+            <Ratting className="text-black left-7 rounded-full right-20 shadow-sm text-sm" />
           </div>
         </figure>
 
@@ -38,12 +43,7 @@ const Cards = ({ data }) => {
             <p className="font-bold text-xl text-[#fa3d3b] mt-2">
               {data.price}
             </p>
-            <Link href={`/cards/${data.id}`}>
-              {" "}
-              <button className="text-[#fa3d3b] cursor-pointer  px-2 items-center">
-                Details
-              </button>
-            </Link>
+            <h1>hnjk</h1>
           </div>
           <div className="flex justify-between mt-4 gap-2">
             <ContextButton data={data} />

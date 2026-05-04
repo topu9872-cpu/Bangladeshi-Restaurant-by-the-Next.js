@@ -4,7 +4,7 @@ import { IoSearch, IoClose } from "react-icons/io5";
 
 import Cards from "@/app/cards/Cards";
 
-const Hook = ({ datas }) => {
+const Hook = ({ datas=[] }) => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -13,9 +13,8 @@ const Hook = ({ datas }) => {
   });
 
   return (
-    <div>
-      <div className="flex justify-between container mt-20 mx-auto items-center">
-        <div className="text-2xl font-extrabold">All Items</div>
+   
+     
         <div>
           <div className="flex items-center">
             {isSearchActive ? (
@@ -45,14 +44,14 @@ const Hook = ({ datas }) => {
               </button>
             )}
           </div>
-        </div>
-      </div>
+       
+    
       <div className="mx-auto grid grid-cols-1 mt-7 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
         {filterData.map((card, ind) => (
           <Cards key={ind} data={card} />
         ))}
       </div>
-    </div>
+   </div>
   );
 };
 

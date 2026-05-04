@@ -6,6 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import ThemeToggle from "../themeProveder/ThemeToggle";
 import { Context } from "../ContextProvider/ContextProvider";
+import Hook from "../AllCardsSearchHooks/Hook";
 
 const NavBar = () => {
  
@@ -64,7 +65,9 @@ ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
 
       <div className="navbar-end gap-2 md:gap-4">
        
-
+<duv className="items-center">
+  <Hook/>
+</duv>
         <div className="dropdown dropdown-end hidden sm:flex">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">

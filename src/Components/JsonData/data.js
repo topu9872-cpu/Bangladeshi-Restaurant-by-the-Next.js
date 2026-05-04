@@ -1,7 +1,7 @@
 export const getScrollCardsData = async () => {
   try {
     const res = await fetch('https://bangladeshi-restaurant-by-the-next.vercel.app/data.json', { 
-     next: { revalidate: 60 }
+     cache:'no-cache'
     });
 
     if (!res.ok) throw new Error('Failed to fetch data');
