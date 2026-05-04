@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
-import { IoSearch, IoClose } from "react-icons/io5";
+
 import ThemeToggle from "../themeProveder/ThemeToggle";
 import { Context } from "../ContextProvider/ContextProvider";
 
 const NavBar = () => {
-  const [isSearchActive, setIsSearchActive] = useState(false);
+ 
   const pathName = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -63,29 +63,7 @@ ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
       </div>
 
       <div className="navbar-end gap-2 md:gap-4">
-        <div className="flex items-center">
-          {isSearchActive ? (
-            <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-2 border border-gray-200 animate-in fade-in zoom-in duration-200">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="input input-sm bg-transparent border-none focus:outline-none text-black w-24 md:w-48"
-                autoFocus
-              />
-              <IoClose
-                className="cursor-pointer text-xl text-gray-500 hover:text-[#fa3d3b]"
-                onClick={() => setIsSearchActive(false)}
-              />
-            </div>
-          ) : (
-            <button
-              className="btn btn-ghost btn-circle hover:bg-orange-100"
-              onClick={() => setIsSearchActive(true)}
-            >
-              <IoSearch className="text-xl" />
-            </button>
-          )}
-        </div>
+       
 
         <div className="dropdown dropdown-end hidden sm:flex">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -114,7 +92,7 @@ ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
             className="card card-compact dropdown-content bg-base-100 z-50 mt-3 w-52 shadow-xl border border-gray-100"
           >
             <div className="card-body">
-              <span className="font-bold text-lg text-black">{cart.length} Items</span>
+              <span className="font-bold text-lg">{cart.length} Items</span>
               <span className="text-[#fa3d3b] font-semibold">
                 Subtotal: ${totalMoney().toFixed(2)}
               </span>

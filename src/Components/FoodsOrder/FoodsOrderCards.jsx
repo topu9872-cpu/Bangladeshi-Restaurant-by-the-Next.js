@@ -20,7 +20,7 @@ const FoodsOrderCards = async () => {
        <h1 className="text-3xl text-center flex justify-center font-black py-6 font-serif text-nowrap">
           Khaas Vyanian
         </h1>
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center w-11/12 ">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-11/12 ">
         {datas.slice(0, 3).map((data) => (
           <div key={data.id} className="hover:scale-105 transition my-0">
             <Cards data={data} />
