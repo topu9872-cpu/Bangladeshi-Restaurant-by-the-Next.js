@@ -1,42 +1,152 @@
 "use client";
 import { Check } from "@gravity-ui/icons";
-import {
-  Button,
-  FieldError,
-  Form,
-  Input,
-  InputGroup,
-  Label,
-  TextField,
-} from "@heroui/react";
+import { Button, Form, InputGroup, Label, TextField } from "@heroui/react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 import { useState } from "react";
-
-
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const LognUpPage = () => {
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors },
+  } = useForm();
+
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
-  const[password, setPassword]=useState("")
+
+  const handleSignUp = async (formData) => {
+    const { name, photo, email, password } = formData;
+    console.log(formData);
+    const { data, error } = await authClient.signUp.email({
+      email,
+      password,
+      name,
+      photo,
+    });
+
+    if (error) {
+      return toast.error(error.message);
+    } else if (data) {
+      toast.success("Sign up is successful");
+      router.push("/signin");
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-center items-center my-auto card mx-auto container w-md mt-20">
-        <Form className="flex w-96 flex-col gap-4">
+        <h1 className=" text-teal-500 font-extrabold text-3xl">SIGNUP</h1>
+        <Form
+          onSubmit={handleSubmit(handleSignUp)}
+          className="flex w-96 flex-col gap-4"
+        >
           <label className="label">Name</label>
-          <input type="text" placeholder="Enter Your Email" className="input input-accent" />
+          <input
+            {...register("name", {
+              required: true,
+            })}
+            type="text"
+            placeholder="Enter Your Name"
+            className="input input-accent"
+          />
+          {errors.name && (
+            <div
+              role="alert"
+              className="alert alert-warning text-white font-bold max-w-80"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              <span>Warning: Name is Invalid !</span>
+            </div>
+          )}
           <Label>Choose file</Label>
-          <input type="file" className="file-input file-input-accent" />
+          <input
+            type="file"
+            {...register("photo", {
+              required: true,
+            })}
+            className="file-input file-input-accent"
+          />
+          {errors.photo && (
+            <div
+              role="alert"
+              className="alert alert-warning h-10 text-white font-bold max-w-80"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              <span>Warning: File is Invalid !</span>
+            </div>
+          )}
           <Label>Email</Label>
-          <input type="email" placeholder="Enter Your Email" className="input input-accent" />
+          <input
+            {...register("email", {
+              required: true,
+            })}
+            type="email"
+            placeholder="Enter Your Email"
+            className="input input-accent"
+          />
+          {errors.email && (
+            <div
+              role="alert"
+              className="alert alert-warning h-10 text-white font-bold max-w-80"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              <span>Warning: Email is Invalid !</span>
+            </div>
+          )}
 
           <TextField className="w-full max-w-80" name="password">
             <Label>Password</Label>
             <InputGroup>
               <InputGroup.Input
+                {...register("password", {
+                  required: true,
+                })}
+                placeholder="Enter Your Password"
                 className="w-screen"
                 type={isVisible ? "text" : "password"}
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                // value={password}
               />
               <InputGroup.Suffix className="pr-0">
                 <Button
@@ -55,12 +165,33 @@ const LognUpPage = () => {
               </InputGroup.Suffix>
             </InputGroup>
           </TextField>
+          {errors.password && (
+            <div
+              role="alert"
+              className="alert h-10 alert-warning text-white font-bold  max-w-80"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              <span>Warning: Password is Invalid !</span>
+            </div>
+          )}
           <div className="flex gap-2">
-            <Button type="submit">
+            <Button className="font-bold" type="submit">
               <Check />
-              Submit
+              SIGNUP
             </Button>
-            <Button type="reset" variant="secondary">
+            <Button className="font-bold" type="reset" variant="secondary">
               Reset
             </Button>
           </div>

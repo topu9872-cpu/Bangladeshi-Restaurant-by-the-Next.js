@@ -1,8 +1,11 @@
+import dns from "node:dns";
+
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/Components/navbar/NavBar";
 import Providers from "../Components/themeProveder/Providers";
-  import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -25,22 +28,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"   suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} min-h-full flex flex-col`}
       >
-       
-         <Providers  >
-          
+        <Providers>
           <main className="max-w-11/12 mx-auto">
-          
-          <NavBar />
-<ToastContainer/>
-          {children}
-          
+            <NavBar />
+            <ToastContainer />
+            {children}
           </main>
         </Providers>
-      
       </body>
     </html>
   );
