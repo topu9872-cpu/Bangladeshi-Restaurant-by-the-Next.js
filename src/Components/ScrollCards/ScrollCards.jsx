@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { getScrollCardsData } from "../JsonData/data";
+import { getScrollCardsData } from "@/lib/JsonData/data";
 
 const ScrollCards = async () => {
   const cards = await getScrollCardsData();

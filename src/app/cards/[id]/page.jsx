@@ -1,4 +1,4 @@
-import { getScrollCardsData } from "@/Components/JsonData/data";
+import { getScrollCardsData } from "@/lib/JsonData/data";
 import { Card } from "@heroui/react";
 import Image from "next/image";
 

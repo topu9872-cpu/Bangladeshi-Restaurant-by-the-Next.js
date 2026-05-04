@@ -1,8 +1,8 @@
 
-import { getScrollCardsData } from "../JsonData/data";
+import { getScrollCardsData } from "../../lib/JsonData/data";
 import { CiLocationArrow1 } from "react-icons/ci";
 import Link from "next/link";
-import Cards from "../../app/cards/Cards";
+import Cards from "@/app/cards/Cards";
 
 const FoodsOrderCards = async () => {
   const datas = await getScrollCardsData();

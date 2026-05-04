@@ -2,7 +2,7 @@ import Cards from "@/app/cards/Cards";
 import Hook from "@/Components/AllCardsSearchHooks/Hook";
 import BackOneByOne from "@/Components/BackOneByOne/BackOneByOne";
 
-import { getScrollCardsData } from "@/Components/JsonData/data";
+import { getScrollCardsData } from "@/lib/JsonData/data";
 
 const AllCards = async () => {
   const datas = await getScrollCardsData();

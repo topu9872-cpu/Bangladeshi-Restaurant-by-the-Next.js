@@ -22,51 +22,45 @@ const DashBoardPage = () => {
     { name: "Processed", value: selectedItem ? 1 : 0 },
   ];
 
-
-
- 
   return (
- <div className="mt-16">
-     <BackOneByOne/>
+    <div className="mt-16">
+      <BackOneByOne />
       <div className="mt-6 space-y-5">
         {cart.length === 0 && (
           <div className="card  mx-auto h-70 shadow-md flex items-center text-5xl text-center">
             <h1 className="flex items-center text-center mx-auto mt-30">
-              {" "}
               No Cards
             </h1>
           </div>
         )}
-  </div>
-    <div className="w-full h-80 flex mt-20  shadow-md">
-      <div className="flex-1 border-none">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart margin={{ bottom: 20 }}>
-            <Pie
-              data={data}
-              innerRadius="80%"
-              outerRadius="100%"
-              cornerRadius="100%"
-              paddingAngle={5}
-              dataKey="value"
-              fill="#8884d8"
-              stroke="none"
-            >
-              {data.map((entry, index) => (
-                <Cell key={index} fill={colors[index]} />
-              ))}
-            </Pie>
-            <Tooltip />
+      </div>
+      <div className="w-full h-80 flex mt-20  shadow-md">
+        <div className="flex-1 border-none">
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart margin={{ bottom: 20 }}>
+              <Pie
+                data={data}
+                innerRadius="80%"
+                outerRadius="100%"
+                cornerRadius="100%"
+                paddingAngle={5}
+                dataKey="value"
+                fill="#8884d8"
+                stroke="none"
+              >
+                {data.map((entry, index) => (
+                  <Cell key={index} fill={colors[index]} />
+                ))}
+              </Pie>
+              <Tooltip />
 
-            <Legend verticalAlign="bottom" align="center" />
-          </PieChart>
-        </ResponsiveContainer>
+              <Legend verticalAlign="bottom" align="center" />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
-    </div>
-  
   );
-  
 };
 
 export default DashBoardPage;
