@@ -6,21 +6,19 @@ import React, { useContext, useEffect, useState } from "react";
 
 import ThemeToggle from "../themeProveder/ThemeToggle";
 import { Context } from "../ContextProvider/ContextProvider";
-import Hook from "../AllCardsSearchHooks/Hook";
 
 const NavBar = () => {
- 
   const pathName = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-const{cart}=useContext(Context)
-const totalMoney = () =>
-  cart.reduce((sum, item) => sum + Number(item.price.replace("$", "")), 0);
+  const { cart } = useContext(Context);
+  const totalMoney = () =>
+    cart.reduce((sum, item) => sum + Number(item.price.replace("$", "")), 0);
   return (
     <nav
- className={`bg-base-200 shadow-md px-4 md:px-8 
+      className={`bg-base-200 shadow-md px-4 md:px-8 
 fixed top-0 left-0 w-full z-50 flex justify-center
 transition-all duration-700 ease-out transform
 ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
@@ -64,10 +62,7 @@ ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
       </div>
 
       <div className="navbar-end gap-2 md:gap-4">
-       
-<duv className="items-center">
-  <Hook/>
-</duv>
+        <duv className="items-center"></duv>
         <div className="dropdown dropdown-end hidden sm:flex">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">

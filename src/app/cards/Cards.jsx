@@ -7,11 +7,13 @@ import ContextButton from "@/Components/ContextProvider/ContextButton";
 
 import HandleBuy from "@/Components/ContextProvider/HandleBuy";
 
+import CardCalclutation from "@/Components/CardCalclutation/CardCalclutation";
+
 const Cards = ({ data }) => {
   return (
     <div>
-      <div className="rounded-xl shadow-2xl  w-full h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[#00ffff] transition-shadow">
-        <figure className="relative h-40 w-full">
+      <div className="rounded-xl shadow-2xl card w-80 h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[#00ffff] transition-shadow">
+        <figure className="relative h-40 ">
           <Image
             src={data.image}
             fill
@@ -20,7 +22,7 @@ const Cards = ({ data }) => {
           />
           <div className="absolute  top-2 cursor-pointer flex right-2 ">
             <Link href={`/cards/${data.id}`}>
-              <button className="text-white font-bold  px-2 items-center">
+              <button className="text-[#f6f6f6] font-bold  px-2 items-center">
                 Details
               </button>
             </Link>
@@ -43,7 +45,7 @@ const Cards = ({ data }) => {
             <p className="font-bold text-xl text-[#fa3d3b] mt-2">
               {data.price}
             </p>
-            <h1>hnjk</h1>
+            <CardCalclutation />
           </div>
           <div className="flex justify-between mt-4 gap-2">
             <ContextButton data={data} />
