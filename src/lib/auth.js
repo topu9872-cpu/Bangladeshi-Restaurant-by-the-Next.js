@@ -23,9 +23,7 @@ socialProviders: {
             clientSecret: process.env.GITHUB_CLIENT_SECRET, 
         }, 
     },
-  //  socialProviders: {
-       
-  //   },
+  
 });
 
 

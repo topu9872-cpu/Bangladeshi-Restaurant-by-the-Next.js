@@ -11,10 +11,19 @@ import { useForm } from "react-hook-form";
 
 const LognUpPage = () => {
   const handleGoogleSignUp = async () => {
-    const data = await authClient.signIn.social({
+    const data = await authClient.signUp.social({
       provider: "google",
+      callbackURL: "/signin"
     });
   };
+
+   const handleGitHubSignUp = async () => {
+    const data = await authClient.signUp.social({
+      provider: "github",
+     callbackURL: "/signin"
+    });
+  };
+
   const {
     register,
     handleSubmit,
@@ -24,11 +33,7 @@ const LognUpPage = () => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleGitHubSignUp = async () => {
-    const data = await authClient.signUp.social({
-      provider: "github",
-    });
-  };
+ 
 
   const handleSignUp = async (formData) => {
     const { name, photo, email, password } = formData;

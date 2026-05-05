@@ -13,7 +13,13 @@ const LognInPage = () => {
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/signin",
+      callbackURL: "/",
+    });
+  };
+  const handleGitHubSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+       callbackURL: "/",
     });
   };
 
@@ -26,11 +32,7 @@ const LognInPage = () => {
     formState: { errors },
   } = useForm();
 
-  const handleGitHubSignUp = async () => {
-    const data = await authClient.signUp.social({
-      provider: "github",
-    });
-  };
+  
 
   const handleSignIn = async (formData) => {
     const { email, password } = formData;
@@ -192,7 +194,7 @@ const LognInPage = () => {
 
         {/* GitHub */}
         <button
-          onClick={handleGitHubSignUp}
+          onClick={handleGitHubSignIn}
           className="btn bg-black text-white border-black"
         >
           <svg

@@ -98,7 +98,7 @@ const NavBar = () => {
 
           <Link
             href="/"
-            className="btn btn-ghost text-xl md:text-2xl font-bold font-serif italic text-[#fa3d3b]"
+            className="btn btn-ghost text-sm sm:text-xl  md:text-2xl font-bold font-serif italic text-[#fa3d3b]"
           >
             🍛 Bangli Foods
           </Link>
