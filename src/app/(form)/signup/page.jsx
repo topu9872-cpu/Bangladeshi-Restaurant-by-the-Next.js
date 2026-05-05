@@ -18,11 +18,12 @@ const LognUpPage = () => {
   };
 
    const handleGitHubSignUp = async () => {
-    const data = await authClient.signUp.social({
+    const data = await authClient.signIn.social({
       provider: "github",
      callbackURL: "/signin"
     });
   };
+  
 
   const {
     register,

@@ -135,7 +135,7 @@ const NavBar = () => {
 
         <div className="navbar-end gap-2 md:gap-4">
           {user && (
-            <div className="hidden sm:flex items-center gap-3">
+            <div className=" items-center hidden xs:flex gap-3">
               <div className="flex flex-col items-end">
                 <span className="text-xs font-bold text-accent italic leading-none">
                   Welcome,
@@ -144,8 +144,8 @@ const NavBar = () => {
                   {user.name}
                 </span>
               </div>
-              <div className="avatar relative">
-                <div className="w-9 h-9 rounded-full  ">
+              <div className="avatar relative ">
+                <div className="w-9 h-9  rounded-full  ">
                   <Image
                     src={user?.image || Avatar}
                     height={30}
