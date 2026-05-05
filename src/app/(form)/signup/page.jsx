@@ -11,14 +11,13 @@ import { useForm } from "react-hook-form";
 
 const LognUpPage = () => {
   const handleGoogleSignUp = async () => {
-    const data = await authClient.signUp.social({
+    const data = await authClient.signIn.social({
       provider: "google",
     });
   };
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm();
 
