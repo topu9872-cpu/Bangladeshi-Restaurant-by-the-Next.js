@@ -1,14 +1,6 @@
 "use client";
 import { Check } from "@gravity-ui/icons";
-import {
-  Button,
-  FieldError,
-  Form,
-  Input,
-  InputGroup,
-  Label,
-  TextField,
-} from "@heroui/react";
+import { Button, Form, InputGroup, Label, TextField } from "@heroui/react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 import { useState } from "react";
@@ -18,6 +10,14 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 
 const LognInPage = () => {
+
+  const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+          provider: "google",
+          callbackURL: "/signin",
+        });
+      };
+      
   const [isVisible, setIsVisible] = useState(false);
   const [password, setPassword] = useState("");
   const {
@@ -27,20 +27,34 @@ const LognInPage = () => {
     formState: { errors },
   } = useForm();
 
+     const handleTiktokSignIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "tiktok"
+    })
+}
+
+    const handleFacebookSignIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "facebook"
+    })
+}
+
+
+   
+
   const handleSignIn = async (formData) => {
     const { email, password } = formData;
     console.log(formData);
     const { data, error } = await authClient.signIn.email({
       email,
       password,
-       callbackURL: "/"
+      callbackURL: "/",
     });
 
     if (error) {
       return toast.error(error.message);
     } else if (data) {
       toast.success("Sign up is successful");
-     
     }
   };
 
@@ -141,13 +155,19 @@ const LognInPage = () => {
             Reset
           </Button>
         </div>
-        <h1 className="text-sm font-bold">Don`t have account?<Link className="text-accent-hover" href="/signup"> signup</Link></h1>
+        <h1 className="text-sm font-bold">
+          Don`t have account?
+          <Link className="text-accent-hover" href="/signup">
+       
+            signup
+          </Link>
+        </h1>
       </Form>
       <div className="divider">or</div>
 
       <div className="grid grid-cols-1 gap-3 grid-rows-3">
         {/* Google */}
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
           <svg
             aria-label="Google logo"
             width="16"
@@ -178,7 +198,7 @@ const LognInPage = () => {
           Login with Google
         </button>
         {/* Facebook */}
-        <button className="btn bg-[#1A77F2] text-white border-[#005fd8]">
+        <button onClick={handleFacebookSignIn} className="btn bg-[#1A77F2] text-white border-[#005fd8]">
           <svg
             aria-label="Facebook logo"
             width="16"
@@ -194,21 +214,13 @@ const LognInPage = () => {
           Login with Facebook
         </button>
 
-        {/* VK */}
-        <button className="btn bg-[#47698F] text-white border-[#35567b]">
-          <svg
-            aria-label="VK logo"
-            width="16"
-            height="16"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 2240 2240"
-          >
-            <g fill="white">
-              <path d="M2077 904q23 64-150 294-24 32-65 85-78 100-90 131-17 41 14 81 17 21 81 82h1l1 1 1 1 2 2q141 131 191 221 3 5 6.5 12.5t7 26.5-.5 34-25 27.5-59 12.5l-256 4q-24 5-56-5t-52-22l-20-12q-30-21-70-64t-68.5-77.5-61-58-56.5-15.5q-3 1-8 3.5t-17 14.5-21.5 29.5-17 52-6.5 77.5q0 15-3.5 27.5t-7.5 18.5l-4 5q-18 19-53 22h-115q-71 4-146-16.5t-131.5-53-103-66T648 1722l-25-24q-10-10-27.5-30t-71.5-91-106-151-122.5-211T165 943q-6-16-6-27t3-16l4-6q15-19 57-19l274-2q12 2 23 6.5t16 8.5l5 3q16 11 24 32 20 50 46 103.5t41 81.5l16 29q29 60 56 104t48.5 68.5T814 1348t34 14 27-5q2-1 5-5t12-22 13.5-47 9.5-81 0-125q-2-40-9-73t-14-46l-6-12q-25-34-85-43-13-2 5-24 17-19 38-30 53-26 239-24 82 1 135 13 20 5 33.5 13.5t20.5 24 10.5 32 3.5 45.5-1 55-2.5 70.5-1.5 82.5q0 11-1 42t-.5 48 3.5 40.5 11.5 39 22.5 24.5q8 2 17 4t26-11 38-34.5 52-67 68-107.5q60-104 107-225 4-10 10-17.5t11-10.5l4-3 5-2.5 13-3 20-.5 288-2q39-5 64 2.5t31 16.5z"></path>
-            </g>
-          </svg>
-          Login with VK
-        </button>
+                  {/* GitHub */}
+<button onClick={handleTiktokSignIn} className="btn bg-black text-white border-black">
+  <svg aria-label="TikTok logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="white" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg>
+  Login with TIKTOK
+</button>
+
+
       </div>
     </div>
   );

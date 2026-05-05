@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} min-h-full flex flex-col`}
       >
         <Providers>
-          <main className="max-w-11/12 mx-auto">
+          <main className="max-w-98% mx-auto">
             <NavBar />
             <ToastContainer />
             {children}

@@ -6,7 +6,7 @@ import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="mt-4 w-screen mx-auto">
+    <footer className="mt-4 w-100% mx-auto">
       <div className="overflow-hidden leading-none">
         <svg
           viewBox="0 0 1440 150"

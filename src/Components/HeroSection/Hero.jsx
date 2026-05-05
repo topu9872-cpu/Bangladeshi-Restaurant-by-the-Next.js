@@ -5,8 +5,8 @@ import { MdArrowOutward } from "react-icons/md";
 import heroImage from '../../../public/assets/Image.png'
 const Hero = () => {
   return (
-    <div className="mx-auto mt-4">
-      <div className="relative w-full h-100 md:h-160 lg:h-300 rounded-3xl overflow-hidden shadow-xl">
+    <div className="mx-auto">
+      <div className="relative w-full h-100 md:h-160 lg:h-300 rounded-sm overflow-hidden shadow-xl">
         <Image
           src={heroImage}
           alt="Hero Food Image"
