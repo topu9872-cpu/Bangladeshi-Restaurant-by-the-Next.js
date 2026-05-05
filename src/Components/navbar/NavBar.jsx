@@ -135,7 +135,7 @@ const NavBar = () => {
 
         <div className="navbar-end gap-2 md:gap-4">
           {user && (
-            <div className=" items-center hidden xs:flex gap-3">
+            <div className=" items-center hidden sm:flex gap-3">
               <div className="flex flex-col items-end">
                 <span className="text-xs font-bold text-accent italic leading-none">
                   Welcome,
