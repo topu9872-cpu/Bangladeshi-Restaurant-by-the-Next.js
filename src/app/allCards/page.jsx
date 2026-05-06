@@ -9,16 +9,8 @@ const AllCards = async () => {
   return (
     <div >
  
-      <div className="mt-15"><BackOneByOne/></div>
+      <BackOneByOne/>
       <Hook datas={datas}/>
-      
-      <div className="mx-auto grid grid-cols-1 mt-7 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
-        {datas.map((data) => (
-          <div key={data.id} className="hover-3d my-0">
-            <Cards data={data} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

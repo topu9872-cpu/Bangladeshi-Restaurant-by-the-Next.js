@@ -1,25 +1,39 @@
 import { getScrollCardsData } from "@/lib/JsonData/data";
-import { Card } from "@heroui/react";
+
 import Image from "next/image";
-
-const DetailsPage = async({params}) => {
-    const {id}=await params;
-    const data=await getScrollCardsData()
-    const details =data.find(i=>i.id==id)
+import { Card, CloseButton } from "@heroui/react";
+import BackOneByOne from "@/Components/BackOneByOne/BackOneByOne";
+const DetailsPage = async ({ params }) => {
+  const { id } = await params;
+  const data = await getScrollCardsData();
+  const details = data.find((i) => i.id == id);
   return (
-    <div>
-      <Card className="border border-gray-300 p-4 container mx-auto mt-6 shadow-lg">
-        <Image src={details.image} fill alt={details.name} className="object-cover max-w-50 rounded-l-md items-center">
-
-        </Image>
-    <div className="ml-60">
-       <h1 className="text-2xl font-semibold"> {details.name}</h1>
-     <p className="text-xl">{details.category}</p>
-     <p className="text-sm text-gray-500">{details.desc}</p>
+    <div className="mt-20 ">
+    <BackOneByOne/>
+    <Card className="max-w-300 mx-auto items-stretch md:flex-row mt-10 shadow-[0_0_30px] shadow-sky-500">
+      <div className="relative h-35 w-full shrink-0 overflow-hidden rounded-2xl sm:h-30 sm:w-30">
+        <Image
+          fill
+          alt={details.name}
+          className="pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none"
+          loading="lazy"
+          src={details.image}
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-3">
+        <Card.Header className="gap-1">
+          <Card.Title className="pr-8 text-3xl font-bold">
+            {details.name}
+          </Card.Title>
+          <span className="text-lg font-medium text-foreground">
+            {details.category}
+          </span>
+          <Card.Description>{details.desc}</Card.Description>
+        </Card.Header>
+      </div>
+    </Card>
     </div>
-     </Card>
-    </div>
-  )
+  );
 };
 
 export default DetailsPage;

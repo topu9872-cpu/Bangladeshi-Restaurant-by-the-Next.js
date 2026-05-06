@@ -23,15 +23,15 @@ const DashBoardPage = () => {
   ];
 
   return (
-    <div className="mt-16">
+    <div >
       <BackOneByOne />
       <div className="mt-6 space-y-5">
         {cart.length === 0 && (
-          <div className="card  mx-auto h-70 shadow-md flex items-center text-5xl text-center">
-            <h1 className="flex items-center text-center mx-auto mt-30">
-              No Cards
-            </h1>
-          </div>
+          <div className="card mt-10 mx-20 h-70 shadow-[0_0_30px_10px] shadow-sky-500 flex items-center text-2xl md:text-5xl text-center">
+          <h1 className="flex items-center my-auto  text-center mx-auto ">
+            This item is not Found
+          </h1>
+        </div>
         )}
       </div>
       <div className="w-full h-80 flex mt-20  shadow-md">

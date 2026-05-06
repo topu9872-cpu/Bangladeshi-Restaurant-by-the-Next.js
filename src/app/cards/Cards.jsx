@@ -12,7 +12,7 @@ import CardCalclutation from "@/Components/CardCalclutation/CardCalclutation";
 const Cards = ({ data }) => {
   return (
     <div>
-      <div className="rounded-xl shadow-2xl card w-80 h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[#00ffff] transition-shadow">
+      <div className="rounded-xl shadow-2xl card w-80 h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[0_0_30px_10px_#00ffff] transition-shadow">
         <figure className="relative h-40 ">
           <Image
             src={data.image}

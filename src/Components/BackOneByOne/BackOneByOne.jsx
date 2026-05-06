@@ -4,10 +4,10 @@ import { FaArrowLeft } from "react-icons/fa6";
 const BackOneByOne = () => {
     const router = useRouter();
   return (
-    <div>
+    <div className="ml-4 md:ml-8 mt-20 ">
        <button
         onClick={() => router.back()}
-        className=" flex items-center font-bold"
+        className=" flex items-center text-xl  font-bold"
       >
         <FaArrowLeft /> Back
       </button>
