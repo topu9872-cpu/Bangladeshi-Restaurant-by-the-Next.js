@@ -16,7 +16,7 @@ const HandleBuy = ({ data }) => {
   return (
     <button
       onClick={handleBuy}
-      className="px-3 py-2 text-xs font-bold rounded-full bg-[#fa3d3b] text-white"
+      className="px-3 py-2 text-xs font-bold rounded-full  border-none shadow-md hover:bg-white hover:text-[#fa3d3b] bg-[#fa3d3b] text-white"
     >
       Order Now
     </button>

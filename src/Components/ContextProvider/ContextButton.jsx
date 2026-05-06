@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
     <div>
       <button
         onClick={handelAddToCart}
-        className="px-3 py-2 cursor-pointer  text-xs font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-md hover:bg-white hover:text-[#fa3d3b] transition-colors"
+        className="px-3 py-2 cursor-pointer  text-xs font-bold rounded-full bg-[#fa3d3b] text-white border-none shadow-md hover:bg-white hover:text-[#fa3d3b]"
       >
         Add to Cart
       </button>

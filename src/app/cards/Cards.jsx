@@ -12,7 +12,7 @@ import CardCalclutation from "@/Components/CardCalclutation/CardCalclutation";
 const Cards = ({ data }) => {
   return (
     <div>
-      <div className="rounded-xl shadow-2xl card w-80 h-auto bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[0_0_30px_10px_#00ffff] transition-shadow">
+      <div className="rounded-xl shadow-2xl hover:scale-100 transition  w-80 h-90  bg-[#faf0e6] pb-4 overflow-hidden hover:shadow-[0_0_30px_10px_#00ffff] ">
         <figure className="relative h-40 ">
           <Image
             src={data.image}
@@ -21,12 +21,12 @@ const Cards = ({ data }) => {
             className="object-cover"
           />
           <div className="absolute  top-2 cursor-pointer flex right-2 ">
-            <Link href={`/cards/${data.id}`}>
-              <button className="text-[#f6f6f6] font-bold  px-2 items-center">
+            {/* <Link href={`/cards/${data.id}`}> */}
+              <button className=" font-bold bg-[#f8b579] hover:scale-90 transition text-white rounded-full mr-2 cursor-pointer shadow-[0_0_6px_5px_#00ffff] px-2 items-center">
                 Details
               </button>
-            </Link>
-            <Ratting className="text-black left-7 rounded-full right-20 shadow-sm text-sm" />
+            {/* </Link> */}
+            <Ratting className="text-black left-7 rounded-full  right-20 shadow-sm text-sm" />
           </div>
         </figure>
 
