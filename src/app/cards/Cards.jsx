@@ -20,12 +20,12 @@ const Cards = ({ data }) => {
             alt={data.name}
             className="object-cover"
           />
-          <div className="absolute  top-2 cursor-pointer flex right-2 ">
-            {/* <Link href={`/cards/${data.id}`}> */}
-              <button className=" font-bold bg-[#f8b579] hover:scale-90 transition text-white rounded-full mr-2 cursor-pointer shadow-[0_0_6px_5px_#00ffff] px-2 items-center">
+          <div className="absolute  top-2 cursor-pointer  flex right-2 ">
+            <Link href={`/cards/${data.id}`}>
+              <button className=" font-bold bg-[#f8b579] hover:scale-90 transition text-white rounded-full mr-4 cursor-pointer shadow-[0_0_6px_5px_#00ffff] px-2 items-center">
                 Details
               </button>
-            {/* </Link> */}
+            </Link>
             <Ratting className="text-black left-7 rounded-full  right-20 shadow-sm text-sm" />
           </div>
         </figure>
