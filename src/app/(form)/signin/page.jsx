@@ -157,10 +157,10 @@ const LognInPage = () => {
       <div className="divider">or</div>
 
       <div className="grid grid-cols-1 gap-3 grid-rows-3">
-        {/* Google */}
+       
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white text-black border-[#e5e5e5]"
+          className="btn bg-white w-90 text-black border-[#e5e5e5]"
         >
           <svg
             aria-label="Google logo"
@@ -195,7 +195,7 @@ const LognInPage = () => {
         {/* GitHub */}
         <button
           onClick={handleGitHubSignIn}
-          className="btn bg-black text-white border-black"
+          className="btn bg-black text-white w-90 border-black"
         >
           <svg
             aria-label="TikTok logo"

@@ -218,7 +218,7 @@ const LognUpPage = () => {
           {/* Google */}
           <button
             onClick={handleGoogleSignUp}
-            className="btn bg-white text-black border-[#e5e5e5]"
+            className="btn bg-white text-black w-90 border-[#e5e5e5]"
           >
             <svg
               aria-label="Google logo"
@@ -253,7 +253,7 @@ const LognUpPage = () => {
           {/* GitHub */}
           <button
             onClick={handleGitHubSignUp}
-            className="btn bg-black text-white border-black"
+            className="btn bg-black text-white w-90 border-black"
           >
             <svg
               aria-label="TokTok logo"
